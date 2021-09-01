@@ -1,0 +1,3 @@
+[submodule "sbst_beamng"]
+	path = sbst_beamng
+	url = https://github.com/se2p/tool-competition-av
