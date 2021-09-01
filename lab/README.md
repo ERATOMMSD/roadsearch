@@ -18,26 +18,6 @@
 +-- crossover_diversity.ipynb: diversity of the crossover operator
 ```
 
-## Installation
-
-It is suggested creating a virtual environment. 
-
-```
-python3 -m venv /path/to/new/virtual/environment
-```
-
-Then, activate the environment. 
-
-```
-source /path/to/new/virtual/environment/bin/activate
-```
-
-Install the requirements.
-
-```
-pip install -r requirements.txt
-```
-
 Launch jupyter lab to see the notebooks. 
 ```
 jupyter lab
