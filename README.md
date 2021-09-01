@@ -1,28 +1,9 @@
-# Obtaining experimental data
+# Analysis of Road Representations in Search-Based Testing of Autonomous Driving Systems
 
-The folder data contains the following two folders:
-- [summary](https://mmm-www-videos.s3.ap-northeast-1.amazonaws.com/roadsearch/summary.zip): contains a summary of the experimental data, which is enough to run the notebooks
-- [raw](https://mmm-www-videos.s3.ap-northeast-1.amazonaws.com/roadsearch/raw.zip): contains all the experimental data
+## Description
+Validating Autonomous Driving Systems (ADSs) is essential to ensure that the ADS meets the necessary requirements to be widely accepted. Simulation-based testing is one of the main validation approaches, in which the ADS is run in a simulated environment over different scenarios. In this context, search-based testing (SBT) is used to generate scenarios that possibly expose particular failures of the ADS under test. Most SBT approaches search for behaviors of other traffic participants, but usually fix the map of the scenario in advance. Recently, the SBT community started to investigate the search for road structures, which is particularly useful when testing specific components of the ADS, such as the lane-keeping component. However, roads can be represented in multiple ways and the impact of using a particular representation on the effectiveness of SBT is unclear. To fill this gap, this paper investigates the usage of six road representations for SBT. As a representative SBT approach, we test the lane-keeping component of an ADS in the BeamNG.tech simulator, aiming to generate roads in which the autonomous vehicle drives off the lane. We study the effectiveness of each road representation in terms of triggered failures and also diversity of the generated roads.
 
-Please download the files in the folder data. The final structure should be as follows:
+## Structure of the repository
+* Folder *experiments* contains the experimental results
 
-```
-.
-+-- lab
-  +-- data
-  |   +-- summary
-  |     +-- data.json
-  |     +-- alterations.json
-  |     +-- crossover.json
-  |     +-- similarity.json
-  |     +-- similarity_failures.json
-  |   +-- raw
-  |     +-- simulations: contains 30 experiments per representation
-  |     +-- similarities: contains the results about the diversity of the simulations
-  |     +-- alterations: contains the results of applying alterations 
-  |     +-- crossover: contains the results of applying crossover 
-  +-- src
-  +-- figures
-```
-
-All the results can be reproduced from the files inside the folder `simulations`.
+## How to reproduce the experimental results
