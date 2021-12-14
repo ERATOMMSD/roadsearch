@@ -25,5 +25,5 @@ The output will be a .csv file with the performance of each evaluated configurat
 ## BeamNG Simulator
 
 A free version of the BeamNG simulator for research purposes can be obtained by registering at https://register.beamng.tech.
-Please follow the installation steps included in their README.
+Please follow the installation steps included in their README. In the experiments we used the `BeamNG.research.v1.7.0.1.zip` version.
 
