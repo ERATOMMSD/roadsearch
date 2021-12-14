@@ -1,4 +1,4 @@
-from sbst_beamng.sample_test_generators.deepjanus_seed_generator import ControlNodesGenerator
+from roadsearch.utils.catmull import ControlNodesGenerator
 from roadsearch.generators.representations.road_generator import RoadGenerator
 import numpy as np
 import bezier

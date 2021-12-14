@@ -12,9 +12,12 @@ import sys
 import errno
 import logging as log
 
-from sbst_beamng.code_pipeline.visualization import RoadTestVisualizer
-from sbst_beamng.code_pipeline.tests_generation import TestGenerationStatistic
-from sbst_beamng.code_pipeline.test_generation_utils import register_exit_fun
+sys.path.append('..')
+sys.path.append('../sbst_beamng/')
+
+from code_pipeline.visualization import RoadTestVisualizer
+from code_pipeline.tests_generation import TestGenerationStatistic
+from code_pipeline.test_generation_utils import register_exit_fun
 
 OUTPUT_RESULTS_TO = 'results'
 
@@ -187,11 +190,14 @@ def generate(executor, beamng_home, beamng_user, time_budget, map_size, module_n
 
     # Setup executor
     if executor == "mock":
-        from sbst_beamng.code_pipeline.executors import MockExecutor
-        the_executor = MockExecutor(time_budget=time_budget, map_size=map_size, road_visualizer=road_visualizer)
+        from code_pipeline.executors import MockExecutor
+        results_dir = '../results/'
+        if not os.path.exists(results_dir):
+            os.mkdir(results_dir)
+        the_executor = MockExecutor(time_budget=time_budget, map_size=map_size, road_visualizer=road_visualizer, result_folder=results_dir)
     elif executor == "beamng":
         # TODO Make sure this executor outputs the files in the results folder
-        from sbst_beamng.code_pipeline.beamng_executor import BeamngExecutor
+        from code_pipeline.beamng_executor import BeamngExecutor
         the_executor = BeamngExecutor(beamng_home=beamng_home, beamng_user=beamng_user, time_budget=time_budget,
                                       map_size=map_size, road_visualizer=road_visualizer)
     else:

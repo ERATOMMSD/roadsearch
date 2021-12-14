@@ -8,8 +8,12 @@ from pathlib import Path
 
 from time import sleep, time
 from datetime import datetime
-from sbst_beamng.code_pipeline.tests_generation import RoadTestFactory
-from sbst_beamng.code_pipeline.executors import MockExecutor
+
+import sys
+sys.path.append('../../sbst_beamng')
+
+from code_pipeline.tests_generation import RoadTestFactory
+from code_pipeline.executors import MockExecutor
 
 
 class AbstractGenerator(ABC):
@@ -23,8 +27,11 @@ class AbstractGenerator(ABC):
         # Dataframe to store the results
         self.df = pd.DataFrame()
         if store_data:
+            results_dir = '../experiments/'
+            if not os.path.exists(results_dir):
+                os.mkdir(results_dir)
             creation_date = datetime.now().strftime('%Y%m%d-%H%M%S')
-            self.file_name = f'experiments/{creation_date}-{self.get_name()}-results.csv'
+            self.file_name = f'{results_dir}{creation_date}-{self.get_name()}-results.csv'
             log.info(f'ERATO experiment output will be stored in {self.file_name}')
         else:
             self.file_name = None
@@ -84,8 +91,8 @@ class AbstractGenerator(ABC):
         log.info("Generated test using: %s", road_points)
         the_test = RoadTestFactory.create_road_test(road_points)
 
-        # Try to execute the test
-        test_outcome, description, execution_data = self.executor.execute_test(the_test, additional_info={'test': test, 'method': method})
+        # Try to execute the test (removed: , additional_info={'test': test, 'method': method})
+        test_outcome, description, execution_data = self.executor.execute_test(the_test)
 
         # Print the result from the test and continue
         log.info("test_outcome %s", test_outcome)
