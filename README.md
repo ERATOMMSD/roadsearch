@@ -7,8 +7,6 @@ Validating Autonomous Driving Systems (ADSs) is essential to ensure that the ADS
 * Folder *lab* contains the experimental results and how to obtain the data
 * Folder *roadsearch* contains the code to run the search algorithm and perform the hyper-parameter study
 
-## How to reproduce the experimental results
-
 ## Installation
 
 It is suggested creating a virtual environment. 
