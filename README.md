@@ -26,3 +26,11 @@ Install the requirements.
 ```
 pip install -r requirements.txt
 ```
+
+## People
+* Ezequiel Castellano https://jp.linkedin.com/in/ezequiel-castellano-7076962b
+* Ahmet Cetinkaya https://www.ahmet.ac/
+* Paolo Arcaini http://group-mmm.org/~arcaini/
+
+## Paper
+E. Castellano, A. Cetinkaya, and P. Arcaini. Analysis of Road Representations in Search-Based Testing of Autonomous Driving Systems. In 21st International Conference on Software Quality, Reliability and Security (QRS 2021) [[doi](https://doi.org/10.1109/QRS54544.2021.00028)]
